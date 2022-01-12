@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { FooterModule } from './footer/footer.module';
 import { HorizontalEntriesListComponent } from './shared/horizontal-entries-list/horizontal-entries-list.component';
 import { VerticalEntriesListComponent } from './shared/vertical-entries-list/vertical-entries-list.component';
+import { SearchComponent } from './search/search.component';
+import { SearchBarComponent } from './search/search-bar/search-bar.component';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { VerticalEntriesListComponent } from './shared/vertical-entries-list/ver
     BrowserAnimationsModule,
     NavigationBarModule,
     FooterModule,
-    HomeModule
+    HomeModule,
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent],

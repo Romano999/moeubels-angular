@@ -1,29 +1,32 @@
-
-
 mat-toolbar {
-  padding-top: 30px;
   position: relative;
 }
 
 mat-sidenav-container, mat-sidenav, mat-sidenav-content {
   height: 100%;
+  z-index: 999;
 }
 
 mat-sidenav {
   width: 250px;
+
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 20px;
 }
 
 .nav-option {
-  font-size: 30px;
+  font-size: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+
 }
 
-.menu-spacer {
-  flex: auto 1 1;
-
+.upper-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .example-full-width {
@@ -37,4 +40,5 @@ mat-sidenav {
   display: flex;
   justify-content: center;
   gap: 0px 69vw;
+  background-color: white;
 }

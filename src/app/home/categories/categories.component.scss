@@ -1,14 +1,20 @@
+.container {
+  padding-top: 30px;
+  margin-top: 100px;
+  background-color: rgba(yellow, 0.3);
+}
+
 .categories {
   width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .categories-banner {
-
+  z-index: 1;
 }
 
 h1 {

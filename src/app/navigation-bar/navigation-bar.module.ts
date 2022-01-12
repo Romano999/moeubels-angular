@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationBarComponent } from './navigation-bar.component';
 
@@ -8,8 +8,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatListModule,
     MatButtonModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule,
+    AppRoutingModule
   ],
   exports: [
     NavigationBarComponent,
@@ -33,7 +37,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatListModule,
     MatButtonModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule
   ],
   schemas: []
 })
