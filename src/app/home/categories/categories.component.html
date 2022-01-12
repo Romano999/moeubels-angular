@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 color="accent">Categories</h1>
+  <div class="categories">
+    <div class="categories-banner" *ngFor='let category of categories'>
+      <app-banner-item
+      [title]="category.categoryName"
+      [description]="category.categoryDescription"
+      [imagePath]="category.imagePath">
+      </app-banner-item>
+    </div>
+  </div>
+</div>
