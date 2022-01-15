@@ -17,8 +17,8 @@ export class ApiService {
     return  throwError(error.error);
   }
 
-  get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
-    return this.http.get(`${environment.api_url}${path}`, { params })
+  get<Type>(path: string, params: HttpParams = new HttpParams()): Observable<any> {
+    return this.http.get<Type>(`${environment.api_url}/${path}`, { params })
       .pipe(catchError(this.formatErrors));
   }
 
@@ -44,7 +44,7 @@ export class ApiService {
 
   put(path: string, body: Object = {}): Observable<any> {
     return this.http.put(
-      `${environment.api_url}${path}`,
+      `${environment.api_url}/${path}`,
       JSON.stringify(body)
     ).pipe(catchError(this.formatErrors));
   }
@@ -55,7 +55,7 @@ export class ApiService {
     };
 
     return this.http.post(
-      `${environment.api_url}${path}`,
+      `${environment.api_url}/${path}`,
       JSON.stringify(body),
       httpOptions
     ).pipe(catchError(this.formatErrors));
@@ -63,7 +63,7 @@ export class ApiService {
 
   delete(path: string): Observable<any> {
     return this.http.delete(
-      `${environment.api_url}${path}`
+      `${environment.api_url}/${path}`
     ).pipe(catchError(this.formatErrors));
   }
 

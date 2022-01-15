@@ -16,6 +16,8 @@ import { VerticalEntriesListComponent } from './shared/vertical-entries-list/ver
 import { SearchComponent } from './search/search.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { SearchModule } from './search/search.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { SearchModule } from './search/search.module';
     NavigationBarModule,
     FooterModule,
     HomeModule,
-    SearchModule
+    SearchModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

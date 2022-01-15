@@ -10,6 +10,8 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ResultProductComponent } from './products-list/result-product/result-product.component';
 import { SearchPaginatorComponent } from './search-paginator/search-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule
   ],
   exports: [
     SearchComponent,
