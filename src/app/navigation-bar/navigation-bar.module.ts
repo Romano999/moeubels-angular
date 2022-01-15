@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppRoutingModule } from '../app-routing.module';
     MatInputModule,
     FlexLayoutModule,
     MatMenuModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   exports: [
     NavigationBarComponent,

@@ -6,12 +6,8 @@ import { Product } from 'src/app/core/models/product';
   templateUrl: './result-product.component.html',
   styleUrls: ['./result-product.component.scss']
 })
-export class ResultProductComponent implements OnInit {
+export class ResultProductComponent {
   @Input() product!: Product;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

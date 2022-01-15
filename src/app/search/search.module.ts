@@ -11,7 +11,8 @@ import { ResultProductComponent } from './products-list/result-product/result-pr
 import { SearchPaginatorComponent } from './search-paginator/search-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card'
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatChipsModule
   ],
   exports: [
     SearchComponent,

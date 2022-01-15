@@ -5,15 +5,12 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './banner-item.component.html',
   styleUrls: ['./banner-item.component.scss']
 })
-export class BannerItemComponent implements OnInit {
+export class BannerItemComponent {
 
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() imagePath?: string = '';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
