@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="product-card">
+    <div>
+      <img [src]="product.imagePath" alt="Product image" class="product-image">
+    </div>
+    <div>
+      <p class="product-name"> {{product.productName}} </p>
+      <p> {{product.productDescription}}</p>
+    </div>
+    <div>
+      <span *ngIf="product.isOnSale">dwluih</span>
+      <p>Price: {{product.price}}</p>
+    </div>
+  </div>
+</div>
