@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
+  @Output() searchTerm = new EventEmitter<String>();
   searchForm !: FormGroup;
 
   ngOnInit(): void {
@@ -16,7 +17,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSearch() {
-    this.searchTerm.emit(this.searchForm.value)
+    this.searchTerm.emit(this.searchForm.value['searchTerm']);
   }
 
 }

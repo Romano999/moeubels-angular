@@ -13,6 +13,7 @@ import { LoginModule } from './login/login.module';
 
 import { ContactModule } from './contact/contact.module';
 import { AccountModule } from './account/account.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -31,7 +32,11 @@ import { AccountModule } from './account/account.module';
     FormsModule,
     LoginModule,
     ContactModule,
-    AccountModule
+    AccountModule,
+    HttpClientModule
+  ],
+  exports: [
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
