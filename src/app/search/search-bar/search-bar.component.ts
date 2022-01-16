@@ -16,7 +16,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSearch() {
-    this.searchForm.value['searchTerm']
+    this.searchTerm.emit(this.searchForm.value)
   }
 
 }
