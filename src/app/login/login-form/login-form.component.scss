@@ -3,15 +3,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .login-card {
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
   margin-bottom: 80px;
-  padding: 50px;
+  height: 600px;
 }
 
-.sign-up-button {
+.login-button {
   width: 200px;
   height: 50px;
 }
@@ -24,3 +29,6 @@ mat-card {
   align-items: center;
 }
 
+mat-tab-group {
+  margin-bottom: 30px;
+}

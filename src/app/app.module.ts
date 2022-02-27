@@ -13,12 +13,15 @@ import { LoginModule } from './login/login.module';
 
 import { ContactModule } from './contact/contact.module';
 import { AccountModule } from './account/account.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './core/interceptors/interceptor.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -36,9 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports: [
-    HttpClientModule,
+    //HttpClientModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent],
   //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

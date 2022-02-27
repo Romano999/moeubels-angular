@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Observable ,  throwError } from 'rxjs';
 
 import { catchError } from 'rxjs/operators';
+import { UserCredentials } from '../models/usercredentials';
 
 @Injectable({
   providedIn: 'root'
@@ -49,21 +50,35 @@ export class ApiService {
     ).pipe(catchError(this.formatErrors));
   }
 
-  post(path: string, body: Object = {}): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    };
+  post(path: string, body: Object = {}, params: HttpParams = new HttpParams()): Observable<any> {
 
     return this.http.post(
       `${environment.api_url}/${path}`,
       JSON.stringify(body),
-      httpOptions
+      { params }
     ).pipe(catchError(this.formatErrors));
   }
 
   delete(path: string): Observable<any> {
     return this.http.delete(
       `${environment.api_url}/${path}`
+    ).pipe(catchError(this.formatErrors));
+  }
+
+  login(userCredentials: UserCredentials, params: HttpParams = new HttpParams()): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
+    };
+
+    const body = new URLSearchParams();
+    body.set('username', userCredentials.username);
+    body.set('password', userCredentials.password);
+
+    return this.http.post(
+      `${environment.api_url}/login`,
+      body.toString(),
+      httpOptions
     ).pipe(catchError(this.formatErrors));
   }
 

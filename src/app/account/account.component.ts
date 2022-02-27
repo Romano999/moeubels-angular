@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent {
-
+  contactMethod?: string = 'phone';
   constructor() { }
 
 }

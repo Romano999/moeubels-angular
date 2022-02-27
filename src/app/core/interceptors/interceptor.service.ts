@@ -8,13 +8,11 @@ import { Observable } from 'rxjs';
 export class InterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const headersConfig = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    };
 
-    const request = req.clone({ setHeaders: headersConfig })
+
+    const request = req.clone()
     console.log(`Sending request to: ${request.urlWithParams}`)
+    console.log(request)
 
     return next.handle(request);
   }

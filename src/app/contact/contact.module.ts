@@ -4,7 +4,8 @@ import { ContactComponent } from './contact.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 @NgModule({
   declarations: [
     ContactComponent
@@ -13,13 +14,16 @@ import { MatTabsModule } from '@angular/material/tabs';
     CommonModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    GoogleMapsModule
   ],
   exports: [
     CommonModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    GoogleMapsModule
   ]
 })
 export class ContactModule { }
