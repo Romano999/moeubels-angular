@@ -1,5 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { JwtService } from '../core/services/jwt.service';
 import { LoginService } from '../core/services/login.service';
 
 @Component({
@@ -10,7 +12,9 @@ import { LoginService } from '../core/services/login.service';
 export class LoginComponent {
 
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private jwtService: JwtService,
+    private router: Router
   ) { }
 
 
@@ -19,7 +23,9 @@ export class LoginComponent {
     .subscribe({
       next: (response: HttpResponse<any>) => {
         let body = JSON.parse(JSON.stringify(response));
-        console.log(body);
+        this.jwtService.saveJwtToken(body["accessToken"])
+        this.jwtService.saveRefreshToken(body["refreshToken"])
+        //this.router.navigate(["/account"])
       },
       error: (e) => console.log(e)
     })

@@ -12,7 +12,7 @@ export class InterceptorService implements HttpInterceptor {
 
     const request = req.clone()
     console.log(`Sending request to: ${request.urlWithParams}`)
-    console.log(request)
+    //console.log(request)
 
     return next.handle(request);
   }

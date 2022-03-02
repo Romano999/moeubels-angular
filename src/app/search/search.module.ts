@@ -13,6 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card'
 import { MatChipsModule } from '@angular/material/chips';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    RouterModule
   ],
   exports: [
     SearchComponent,

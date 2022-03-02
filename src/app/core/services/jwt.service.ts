@@ -9,12 +9,17 @@ export class JwtService {
     return window.localStorage['jwtToken'];
   }
 
-  saveToken(token: String) {
+  saveJwtToken(token: String) {
     window.localStorage['jwtToken'] = token;
   }
 
-  destroyToken() {
+  saveRefreshToken(token: String) {
+    window.localStorage['refreshToken'] = token;
+  }
+
+  destroyTokens() {
     window.localStorage.removeItem('jwtToken');
+    window.localStorage.removeItem('refreshToken');
   }
 
 }

@@ -16,6 +16,9 @@ import { AccountModule } from './account/account.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './core/interceptors/interceptor.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ProductComponent } from './product/product.component';
+import { RouterModule } from '@angular/router';
+import { ProductModule } from './product/product.module';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     LoginModule,
     ContactModule,
     AccountModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    ProductModule
   ],
   exports: [
     //HttpClientModule,

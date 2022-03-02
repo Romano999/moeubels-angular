@@ -1,30 +1,22 @@
 <div class="container">
   <div class="contact-method">
-    <h1>Contact us!</h1>
-    <p>We would like to hear your feedback.</p>
-    <mat-button-toggle-group [(ngModel)]="contactMethod" #group="matButtonToggleGroup" name="contactMethod" aria-label="Contact method">
-      <mat-button-toggle value="phone">
-      <mat-icon>phone</mat-icon>
-        Phone</mat-button-toggle>
-      <mat-button-toggle value="mail">
-        <mat-icon>mail</mat-icon>
-        Mail</mat-button-toggle>
-      <mat-button-toggle value="location">
-        <mat-icon>place</mat-icon>
-        Location</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-  <div  class="contact-information">
-    <p *ngIf="!group.value">Please select a method of contacting us!</p>
-    <div *ngIf="group.value === 'phone'">
-      Our customer service is available 24/7 on the following phone numbers:
+    <mat-card>
+      <h1>Contact us!</h1>
+      <p>We would like to hear your feedback.</p>
+      <mat-button-toggle-group [(ngModel)]="contactMethod" #group="matButtonToggleGroup" name="contactMethod" aria-label="Contact method">
+        <mat-button-toggle value="phone">
+        <mat-icon>phone</mat-icon>
+        <p>06-123-456-78</p>
+        </mat-button-toggle>
+        <mat-button-toggle value="mail">
+          <mat-icon>mail</mat-icon>
+          <p>moeubels@fakegmail.com</p></mat-button-toggle>
+        <mat-button-toggle value="location">
+          <mat-icon>place</mat-icon>
+          <p>Le Carrefour: Dellaertweg 7F</p></mat-button-toggle>
+      </mat-button-toggle-group>
+    <div class="contact-information">
+      <app-contact-form></app-contact-form>
     </div>
-    <div *ngIf="group.value === 'mail'">
-      You can contact us by sending a mail to example123@gmail.com.
-    </div>
-    <div *ngIf="group.value === 'location'">
-      Our
-
-    </div>
-  </div>
+  </mat-card>
 </div>

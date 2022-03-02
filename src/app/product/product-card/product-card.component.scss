@@ -1,0 +1,20 @@
+@use "src/colors.scss";
+
+.container {
+  display: grid;
+  justify-content: center;
+  //text-align: center;
+  place-items: center;
+}
+
+.product-image {
+  width: 500px;
+  height: 300px;
+  object-fit: fill;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 60px;
+  color: rgba($color: colors.$green, $alpha: 2.0);
+}

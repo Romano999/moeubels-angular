@@ -14,8 +14,16 @@ export class ProductService {
   ) {}
 
   get(id: string): Observable<Product> {
-    return this.apiService.get<Product>(`product/${id}`)
-    .pipe(map((data: {product: Product}) => data.product));
+    const httpParams = new HttpParams()
+    return this.apiService.get<Product>(`products/${id}`, httpParams);
+  }
+
+  getAll(page: number, size: number) {
+    const httpParams = new HttpParams()
+    .set('page', page)
+    .set('size', size);
+
+    return this.apiService.getAll(`products`, httpParams);
   }
 
   update(product: Product) {

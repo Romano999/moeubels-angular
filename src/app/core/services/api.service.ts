@@ -23,9 +23,8 @@ export class ApiService {
       .pipe(catchError(this.formatErrors));
   }
 
-  getAll(path: string, page: number, params: HttpParams = new HttpParams()): Observable<any> {
-    console.log(`sending request to ${environment.api_url}/${path}/page/${page}`)
-    return this.http.get(`${environment.api_url}/${path}/page/${page}`, { params })
+  getAll(path: string, params: HttpParams = new HttpParams()): Observable<any> {
+    return this.http.get(`${environment.api_url}/${path}/all`, { params })
       .pipe(catchError(this.formatErrors));
   }
 

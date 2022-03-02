@@ -17,6 +17,9 @@
           <mat-chip color="primary" selected>{{product.category.categoryName}}</mat-chip>
         </mat-chip-list>
       </div>
+      <div>
+        <a [routerLink]="['/product', product.productId]"><button mat-stroked-button>View</button></a>
+      </div>
     </div>
   </mat-card>
 </div>

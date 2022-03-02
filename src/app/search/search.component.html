@@ -1,6 +1,8 @@
-<app-search-bar (searchTerm)="searchProduct($event)"></app-search-bar>
-<app-products-list [products]="products"></app-products-list>
-<app-search-paginator
+<div class="container">
+  <app-search-bar (searchTerm)="searchProduct($event)"></app-search-bar>
+  <app-products-list [products]="products"></app-products-list>
+  <app-search-paginator
   (pageable)="onPagingChange($event)"
   [size]="amountOfResults"
-></app-search-paginator>
+  ></app-search-paginator>
+</div>

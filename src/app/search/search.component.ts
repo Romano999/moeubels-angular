@@ -9,7 +9,7 @@ import { ProductService } from '../core/services/product.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit{
   products: Product[] = [];
   pageable: Pageable = {page: 0, amount:5}
   amountOfResults: number = 0;
@@ -18,6 +18,19 @@ export class SearchComponent {
     private productService: ProductService
   ) { }
 
+
+  ngOnInit() {
+    this.productService.getAll(this.pageable.page, this.pageable.amount)
+    .subscribe({
+      next: (response: HttpResponse<any>) => {
+        let body = JSON.parse(JSON.stringify(response));
+        this.products = body.content;
+        console.log(body);
+        this.amountOfResults = body.totalElements
+      },
+      error: (e) => console.log(e)
+    })
+  }
 
   searchProduct(searchTerm: any) {
     this.productService.getBySearchterm(searchTerm as string, this.pageable.page, this.pageable.amount)

@@ -2,13 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent,
   ],
   imports: [
     CommonModule,
@@ -16,14 +22,15 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatIconModule,
     MatTabsModule,
     FormsModule,
-    GoogleMapsModule
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatTabsModule,
-    GoogleMapsModule
+    MatTabsModule
   ]
 })
 export class ContactModule { }
