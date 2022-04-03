@@ -1,16 +1,15 @@
 <div class="container">
-  <h1>{{product.productName}}</h1>
-  <img class="product-image" [src]="product.imagePath" alt="">
-  <div class = product>
-    <div>
-      <h2>{{product.productDescription}}</h2>
-      <h2>{{product.price}}</h2>
-      <h2>{{product.category.categoryName}}</h2>
-    </div>
-    <div>
-      <h2>{{product.productDescription}}</h2>
-      <h2>{{product.price}}</h2>
-      <h2>{{product.category.categoryName}}</h2>
-    </div>
+  <div class="product">
+      <h1>{{product.productName}}</h1>
+      <h2>Description</h2>
+      <h3>{{product.productDescription}}</h3>
+      <h2>Price</h2>
+      <h3>€{{product.price}}</h3>
+      <h2>Category</h2>
+      <h3>{{product.category.categoryName}}</h3>
+      <div class="shopping-buttons">
+        <button mat-raised-button color="primary" (click)="addToShoppingCart()">Add to cart</button>
+        <button mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+      </div>
   </div>
 </div>

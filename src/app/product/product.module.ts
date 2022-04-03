@@ -4,6 +4,7 @@ import { ProductComponent } from './product.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
   imports: [
     CommonModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class ProductModule { }

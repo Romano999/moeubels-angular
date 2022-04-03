@@ -15,16 +15,14 @@ import { ContactModule } from './contact/contact.module';
 import { AccountModule } from './account/account.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './core/interceptors/interceptor.service';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { ProductComponent } from './product/product.component';
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
+import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingCartComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +39,8 @@ import { ProductModule } from './product/product.module';
     AccountModule,
     HttpClientModule,
     RouterModule,
-    ProductModule
+    ProductModule,
+    ShoppingCartModule
   ],
   exports: [
     //HttpClientModule,

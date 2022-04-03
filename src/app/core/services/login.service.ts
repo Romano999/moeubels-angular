@@ -16,5 +16,4 @@ export class LoginService{
   login(userCredentials: UserCredentials): Observable<any> {
     return this.apiService.login(userCredentials);
   }
-
 }

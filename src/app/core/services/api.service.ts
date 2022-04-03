@@ -29,7 +29,7 @@ export class ApiService {
   }
 
   getWithPagination(path: string, searchterm: string, page: number, params: HttpParams = new HttpParams()): Observable<any> {
-    console.log(`sending request to ${environment.api_url}/${path}/name/${searchterm}/${page}`)
+    //console.log(`sending request to ${environment.api_url}/${path}/name/${searchterm}/${page}`)
     /*this.http.get(`${environment.api_url}/${path}/name/${searchterm}/${page}`, { params }).subscribe({
       next(json:any) {
         console.log(json);
@@ -50,11 +50,20 @@ export class ApiService {
   }
 
   post(path: string, body: Object = {}, params: HttpParams = new HttpParams()): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+      })
 
+    };
+    console.log(JSON.stringify(body))
+
+    console.log(`${environment.api_url}/${path}`)
     return this.http.post(
       `${environment.api_url}/${path}`,
       JSON.stringify(body),
-      { params }
+      httpOptions
     ).pipe(catchError(this.formatErrors));
   }
 
@@ -67,7 +76,8 @@ export class ApiService {
   login(userCredentials: UserCredentials, params: HttpParams = new HttpParams()): Observable<any> {
 
     const httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
+      headers: new HttpHeaders(
+        {'Content-Type': 'application/x-www-form-urlencoded'})
     };
 
     const body = new URLSearchParams();

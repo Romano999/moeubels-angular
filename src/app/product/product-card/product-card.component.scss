@@ -7,14 +7,12 @@
   place-items: center;
 }
 
-.product-image {
-  width: 500px;
-  height: 300px;
-  object-fit: fill;
+.product {
+  text-align: center;
 }
 
 h1 {
   margin-bottom: 40px;
-  font-size: 60px;
+  font-size: 40px;
   color: rgba($color: colors.$green, $alpha: 2.0);
 }

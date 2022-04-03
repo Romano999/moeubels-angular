@@ -8,7 +8,6 @@ import { Product } from 'src/app/core/models/product';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent{
-
   @Input() products: Array<Product> = [];
 
   constructor() { }
