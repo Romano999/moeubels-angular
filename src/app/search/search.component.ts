@@ -11,42 +11,60 @@ import { ProductService } from '../core/services/product.service';
 })
 export class SearchComponent implements OnInit{
   products: Product[] = [];
-  pageable: Pageable = {page: 0, amount:5}
-  amountOfResults: number = 0;
+  pageable: Pageable = {page: 0, amount:5};
+  amountOfResults!: number;
+  previousSearchterm: String = "";
 
   constructor(
     private productService: ProductService
   ) { }
 
-
   ngOnInit() {
+    this.getAllProducts();
+  }
+
+  searchProduct(searchterm: any) {
+    searchterm = searchterm.trim();
+    this.previousSearchterm = searchterm;
+
+    if (!searchterm) {
+      this.getAllProducts();
+    } else {
+      this.getAllProductsBySearchterm(searchterm)
+    }
+  }
+
+  onPagingChange(pageSettings: any) {
+    this.pageable = pageSettings;
+    if (!this.previousSearchterm) {
+      this.getAllProducts();
+    } else {
+      this.getAllProductsBySearchterm(this.previousSearchterm)
+    }
+  }
+
+  getAllProducts() {
     this.productService.getAll(this.pageable.page, this.pageable.amount)
     .subscribe({
       next: (response: HttpResponse<any>) => {
         let body = JSON.parse(JSON.stringify(response));
         this.products = body.content;
-        console.log(body);
         this.amountOfResults = body.totalElements
       },
       error: (e) => console.log(e)
     })
   }
 
-  searchProduct(searchTerm: any) {
-    this.productService.getBySearchterm(searchTerm as string, this.pageable.page, this.pageable.amount)
+  getAllProductsBySearchterm(searchterm: any) {
+    this.previousSearchterm = searchterm;
+    this.productService.getBySearchterm(searchterm as string, this.pageable.page, this.pageable.amount)
       .subscribe({
         next: (response: HttpResponse<any>) => {
           let body = JSON.parse(JSON.stringify(response));
           this.products = body.content;
-          console.log(body);
-          this.amountOfResults = body.totalElements
+          this.amountOfResults = body.totalElement;
         },
         error: (e) => console.log(e)
-      })
-  }
-
-  onPagingChange(pageSettings: any) {
-    console.log(pageSettings)
-    this.pageable = pageSettings;
+    })
   }
 }
