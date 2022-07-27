@@ -1,0 +1,15 @@
+@use "src/colors.scss";
+
+.container {
+  text-align: center;
+}
+
+.card-title {
+  color: colors.$green;
+  margin-bottom: 40px;
+}
+
+.card-footer {
+  color: colors.$green;
+  margin-top: 20px;
+}

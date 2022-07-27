@@ -9,6 +9,10 @@ export class JwtService {
     return window.sessionStorage['jwtToken'];
   }
 
+  getRefreshToken(): String {
+    return window.sessionStorage['refreshToken'];
+  }
+
   saveJwtToken(token: String) {
     window.sessionStorage['jwtToken'] = token;
   }

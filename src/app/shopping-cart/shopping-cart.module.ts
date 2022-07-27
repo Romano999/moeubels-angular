@@ -7,12 +7,16 @@ import { ShoppingCartItemComponent } from './shopping-cart-list/shopping-cart-it
 import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
 import {  MatButtonModule } from '@angular/material/button';
+import { ShoppingCartPayComponent } from './shopping-cart-pay/shopping-cart-pay.component';
+import { ShoppingCartPayItemComponent } from './shopping-cart-pay/shopping-cart-pay-item/shopping-cart-pay-item.component';
 
 @NgModule({
   declarations: [
     ShoppingCartComponent,
     ShoppingCartListComponent,
-    ShoppingCartItemComponent
+    ShoppingCartItemComponent,
+    ShoppingCartPayComponent,
+    ShoppingCartPayItemComponent
   ],
   imports: [
     CommonModule,
