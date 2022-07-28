@@ -4,5 +4,7 @@ export enum Endpoint {
   Favourite = "favourites",
   Product = "products",
   Reviews = "reviews",
-  ShoppingCart = "shoppingcart"
+  ShoppingCart = "shoppingcart",
+  Payment = "shoppingcart/payment",
+  RefreshToken = "token/refresh",
 }

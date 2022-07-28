@@ -35,4 +35,9 @@ export class ShoppingCartService {
   delete(id: string) {
     return this.apiService.delete(`${Endpoint.ShoppingCart}/${id}`)
   }
+
+  payment(actorId: string) {
+    return this.apiService.delete(`${Endpoint.Payment}/${actorId}`)
+  }
+
 }

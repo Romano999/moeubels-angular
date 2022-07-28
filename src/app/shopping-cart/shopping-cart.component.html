@@ -4,6 +4,6 @@
     <app-shopping-cart-list [products]="products"></app-shopping-cart-list>
   </div>
   <div class="cart-pay">
-    <app-shopping-cart-pay [products]="products"> </app-shopping-cart-pay>
+    <app-shopping-cart-pay [products]="products" (payment)="payItems()"> </app-shopping-cart-pay>
   </div>
 </div>

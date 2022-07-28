@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
 
 @Component({
@@ -8,6 +8,7 @@ import { Product } from 'src/app/core/models/product';
 })
 export class ShoppingCartPayComponent {
   @Input() products: Array<Product> = [];
+  @Output() payment = new EventEmitter<Product>();
 
   constructor() { }
 
@@ -15,5 +16,9 @@ export class ShoppingCartPayComponent {
     let totalPrice: number = 0;
     this.products.forEach(product => totalPrice += product.price);
     return totalPrice;
+  }
+
+  payItems() {
+    this.payment.emit();
   }
 }

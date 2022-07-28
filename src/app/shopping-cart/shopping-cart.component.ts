@@ -41,4 +41,16 @@ export class ShoppingCartComponent implements OnInit {
     })
   }
 
+  payItems() {
+    console.log("pay")
+    let user = this.userService.getId().toString();
+    this.shoppingCartService.payment(user)
+    .subscribe({
+      next: (response: HttpResponse<any>) => {
+        let body = JSON.parse(JSON.stringify(response));
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
 }

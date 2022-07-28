@@ -91,4 +91,9 @@ export class ApiService {
     ).pipe(catchError(this.formatErrors));
   }
 
+  payment(path: string) {
+    return this.http.delete(
+      `${environment.api_url}/${path}`
+    ).pipe(catchError(this.formatErrors));
+  }
 }
