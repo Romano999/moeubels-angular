@@ -15,7 +15,7 @@ export class ShoppingCartPayComponent {
   getTotalPrice() {
     let totalPrice: number = 0;
     this.products.forEach(product => totalPrice += product.price);
-    return totalPrice;
+    return Number(Math.round(parseFloat(totalPrice + 'e' + 2)) + 'e-' + 2).toFixed(2);;
   }
 
   payItems() {
