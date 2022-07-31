@@ -1,4 +1,12 @@
 <div class="container">
-  <app-login-form (loginAttempt)="onLoginAttempt($event)">
-  </app-login-form>
+  <mat-card class="card">
+    <mat-tab-group>
+      <mat-tab label="Login">
+          <app-login-form (loginAttempt)="onLoginAttempt($event)" class="login-form"></app-login-form>
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <app-sign-form (signInAttempt)="signInAttempt($event)"></app-sign-form>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
 </div>

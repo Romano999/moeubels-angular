@@ -10,11 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SignFormComponent } from './sign-form/sign-form.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
     LoginComponent,
     LoginFormComponent,
+    SignFormComponent,
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatTabsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatStepperModule,
   ],
   exports: [
     LoginComponent,

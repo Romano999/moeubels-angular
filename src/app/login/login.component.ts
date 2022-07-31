@@ -1,6 +1,8 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Actor } from '../core/models/actor';
+import { ActorService } from '../core/services/actor.service';
 import { JwtService } from '../core/services/jwt.service';
 import { LoginService } from '../core/services/login.service';
 import { UserService } from '../core/services/user.service';
@@ -16,7 +18,8 @@ export class LoginComponent {
     private loginService: LoginService,
     private jwtService: JwtService,
     private userService: UserService,
-    private router: Router
+    private actorService: ActorService,
+    private router: Router,
   ) { }
 
   onLoginAttempt($event: any) {
@@ -33,5 +36,13 @@ export class LoginComponent {
       },
       error: (e) => console.log(e)
     })
+  }
+
+  signInAttempt($event: Actor) {
+    this.actorService.insert($event).subscribe({
+      next: (response: HttpResponse<any>) => {
+      },
+      error: (e) => console.log(e)
+    });
   }
 }

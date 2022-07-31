@@ -57,9 +57,7 @@ export class ApiService {
       })
 
     };
-    console.log(JSON.stringify(body))
 
-    console.log(`${environment.api_url}/${path}`)
     return this.http.post(
       `${environment.api_url}/${path}`,
       JSON.stringify(body),
