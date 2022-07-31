@@ -49,7 +49,7 @@ export class SearchComponent implements OnInit{
       next: (response: HttpResponse<any>) => {
         let body = JSON.parse(JSON.stringify(response));
         this.products = body.content;
-        this.amountOfResults = body.totalElements
+        this.amountOfResults = body.totalElements;
       },
       error: (e) => console.log(e)
     })
@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit{
         next: (response: HttpResponse<any>) => {
           let body = JSON.parse(JSON.stringify(response));
           this.products = body.content;
-          this.amountOfResults = body.totalElement;
+          this.amountOfResults = body.totalElements;
         },
         error: (e) => console.log(e)
     })
