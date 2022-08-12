@@ -1,5 +1,7 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AccountComponent } from './account.component';
@@ -16,7 +18,9 @@ describe('AccountComponent', () => {
         RouterTestingModule,
       ],
       providers: [
-        AccountComponent
+        AccountComponent,
+        MatSnackBar,
+        Overlay
       ]
     });
     injector = getTestBed();

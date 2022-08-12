@@ -2,6 +2,8 @@ import { getTestBed, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ShoppingCartComponent } from './shopping-cart.component';
+import { Overlay } from '@angular/cdk/overlay';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 describe('ShoppingCartComponent', () => {
   let component: ShoppingCartComponent
@@ -15,7 +17,9 @@ describe('ShoppingCartComponent', () => {
         RouterTestingModule,
       ],
       providers: [
-        ShoppingCartComponent
+        ShoppingCartComponent,
+        MatSnackBar,
+        Overlay
       ]
     });
     injector = getTestBed();
