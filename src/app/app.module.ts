@@ -18,6 +18,7 @@ import { InterceptorService } from './core/interceptors/interceptor.service';
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
     HttpClientModule,
     RouterModule,
     ProductModule,
-    ShoppingCartModule
+    ShoppingCartModule,
+    MatSnackBarModule,
   ],
   exports: [
     //HttpClientModule,
