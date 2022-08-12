@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const isAuth: boolean = !!this.jwtService.getToken()
-      console.log(`Authenticated? ${isAuth}`)
       if (isAuth) {
         return true
       }

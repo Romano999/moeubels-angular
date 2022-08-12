@@ -6,5 +6,5 @@ export enum Endpoint {
   Reviews = "reviews",
   ShoppingCart = "shoppingcart",
   Payment = "shoppingcart/payment",
-  RefreshToken = "token/refresh",
+  RefreshToken = "roles/token/refresh",
 }
