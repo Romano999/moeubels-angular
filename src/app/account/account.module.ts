@@ -10,6 +10,7 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 import { HelpComponent } from './help/help.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatButtonModule } from '@angular/material/button';
+import { LogOutComponent } from './log-out/log-out.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     PersonalInformationComponent,
     HelpComponent,
     AdminComponent,
+    LogOutComponent,
   ],
   imports: [
     CommonModule,
