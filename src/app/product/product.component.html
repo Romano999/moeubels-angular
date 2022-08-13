@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="product" class="product-container">
+    <img class="product-image" [src]="product.imagePath" alt="">
+    <app-product-card
+    [product]="product"
+    (shoppingCartProduct)="addToShoppingCart()"
+    (favoriteProduct)="addToFavorites()"></app-product-card>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="contact-method">
+    <mat-card>
+      <h1>Contact us!</h1>
+      <p>We would like to hear your feedback.</p>
+      <mat-button-toggle-group [(ngModel)]="contactMethod" #group="matButtonToggleGroup" name="contactMethod" aria-label="Contact method">
+        <mat-button-toggle value="phone">
+        <mat-icon>phone</mat-icon>
+        <p>06-123-456-78</p>
+        </mat-button-toggle>
+        <mat-button-toggle value="mail">
+          <mat-icon>mail</mat-icon>
+          <p>moeubels@fakegmail.com</p></mat-button-toggle>
+        <mat-button-toggle value="location">
+          <mat-icon>place</mat-icon>
+          <p>Le Carrefour: Dellaertweg 7F</p></mat-button-toggle>
+      </mat-button-toggle-group>
+    <div class="contact-information">
+      <app-contact-form></app-contact-form>
+    </div>
+  </mat-card>
+</div>

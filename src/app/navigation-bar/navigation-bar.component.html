@@ -1,0 +1,42 @@
+<div class="container">
+  <mat-toolbar>
+    <mat-toolbar-row class="upper-nav" >
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a [ngStyle]="{'color':'unset', 'text-decoration': 'none', 'hover':'pointer'}" routerLink="">
+        <span class="logo">Moeubels</span>
+      </a>
+      <div fxShow="true" fxHide.lt-md>
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a class="nav-option" [routerLink]="['/home']" routerLinkActive="router-link-active" mat-button>Home</a>
+        <a class="nav-option" [routerLink]="['/search']" routerLinkActive="router-link-active" mat-button>Products</a>
+        <a class="nav-option" [routerLink]="['/contact']" routerLinkActive="router-link-active" mat-button>Contact</a>
+        <a class="nav-option" [routerLink]="['/account']" routerLinkActive="router-link-active" mat-button>Account</a>
+      </div>
+      <div>
+        <button mat-icon-button>
+          <mat-icon class="material-icons color_green" [routerLink]="['/search']">search</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="material-icons color_green" [routerLink]="['/shopping-cart']">shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="material-icons color_green" [routerLink]="['/account']">person</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill fxShow="true">
+    <mat-sidenav #sidenav [fixedInViewport]="true">
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" mat-list-item><b>Close</b></a>
+        <a [routerLink]="['/home']" mat-list-item>Home</a>
+        <a [routerLink]="['/search']" mat-list-item>Products</a>
+        <a [routerLink]="['/contact']" mat-list-item>Contact</a>
+        <a [routerLink]="['/account']" mat-list-item>Account</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>

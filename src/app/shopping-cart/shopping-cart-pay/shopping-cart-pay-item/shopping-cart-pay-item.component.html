@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="payment-card">
+    <div class="col-sm-4">
+      <p class="product-name"> {{product.productName}} </p>
+    </div>
+    <div class="col-sm-4">
+      <span *ngIf="product.isOnSale">Sale!</span>
+      <p>€{{productPrice}}</p>
+    </div>
+    <div class="col-sm-4">
+      <mat-chip-list aria-label="">
+        <mat-chip color="primary" selected>{{product.category.categoryName}}</mat-chip>
+      </mat-chip-list>
+    </div>
+    <div class="col-sm-4">
+      <a [routerLink]="['/product', product.productId]"><button mat-stroked-button>View</button></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.container {
+  //width: 80vw
+  margin-top: 50px;
+}
+
+.product-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.product-image {
+  width: 500px;
+  height: 500px;
+  object-fit: fill;
+  border-radius: 4px;
+}

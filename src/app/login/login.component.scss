@@ -1,0 +1,21 @@
+.container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/photos/backgrounds/loginpage-background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 50%;
+  width: 400px;
+}
+
+// .login-form {
+//   margin-top: 1000000000000000px;
+// }

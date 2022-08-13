@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-card>
+    <div class="product-card">
+      <div>
+        <img [src]="product.imagePath" alt="Product image" class="product-image">
+      </div>
+      <div>
+        <p class="product-name"> {{product.productName}} </p>
+        <p> {{product.productDescription}}</p>
+      </div>
+      <div>
+        <span *ngIf="product.isOnSale">Sale!</span>
+        <p>€{{productPrice}}</p>
+      </div>
+      <div>
+        <mat-chip-list aria-label="">
+          <mat-chip color="primary" selected>{{product.category.categoryName}}</mat-chip>
+        </mat-chip-list>
+      </div>
+      <div>
+        <a [routerLink]="['/product', product.productId]"><button mat-stroked-button>View</button></a>
+      </div>
+    </div>
+  </mat-card>
+</div>

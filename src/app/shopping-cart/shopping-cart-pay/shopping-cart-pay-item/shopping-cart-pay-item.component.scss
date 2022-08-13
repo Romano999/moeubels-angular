@@ -1,0 +1,13 @@
+.payment-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col-sm-4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+}

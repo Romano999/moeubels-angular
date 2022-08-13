@@ -1,0 +1,44 @@
+<div class="container">
+  <mat-stepper [linear]="isLinear" orientation="vertical" #stepper>
+    <mat-step [stepControl]="signUpFormNames">
+      <form [formGroup]="signUpFormNames">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstname" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Last name" formControlName="lastname" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="signUpFormDetails" label="Fill out your account details">
+      <form [formGroup]="signUpFormDetails">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Register</ng-template>
+      <p>Press register to register your account.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="onSignInClick()">Register</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

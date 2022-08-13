@@ -1,0 +1,44 @@
+@use "src/colors.scss";
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/photos/backgrounds/hero.jpg");
+
+  /* Set a specific height */
+  height: 75%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  gap: 20px 0px;
+}
+
+/* Place text in the middle of the image */
+.hero-card {
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  margin-bottom: 40px;
+  font-size: 60px;
+  //color: rgba($color: colors.$green, $alpha: 2.0);
+}
+
+.button {
+  background-color: colors.$green;
+  color: white;
+  font-size: 30px;
+  height: 60px;
+}
+

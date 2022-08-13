@@ -1,0 +1,20 @@
+@use "src/colors.scss";
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: colors.$green;
+}
+
+.cart-pay {
+  margin-top: 75px;
+}

@@ -1,0 +1,51 @@
+@use "src/colors.scss";
+
+mat-toolbar {
+  position: relative;
+  height: 100px;
+}
+
+mat-sidenav-container, mat-sidenav, mat-sidenav-content {
+  height: 100%;
+  z-index: 999;
+}
+
+mat-sidenav {
+  width: 250px;
+
+}
+
+.container{
+  //margin-bottom: 10px;
+}
+
+.logo {
+  font-size: 30px;
+  color: colors.$green;
+}
+
+.nav-option {
+  font-size: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: colors.$green;
+}
+
+.upper-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.material-icons.color_green {
+  color: colors.$green;
+}
+
+.router-link-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+
+}

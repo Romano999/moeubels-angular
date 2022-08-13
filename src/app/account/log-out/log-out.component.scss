@@ -1,0 +1,13 @@
+@use "src/colors.scss";
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.button {
+  background-color: colors.$green;
+  color: white;
+  font-size: 15px;
+  // height: 60px;
+}
