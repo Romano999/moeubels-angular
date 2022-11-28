@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, throwError} from 'rxjs';
 import { catchError, filter, switchMap, take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -19,6 +20,7 @@ export class InterceptorService implements HttpInterceptor {
     private jwtService: JwtService,
     private http: HttpClient,
     private userService: UserService,
+    private router: Router,
   ){ }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -36,6 +38,7 @@ export class InterceptorService implements HttpInterceptor {
       request = req.clone()
     }
 
+    console.log(request);
     this.handlingError = false
 
     return next.handle(request).pipe(catchError(error => {
@@ -68,6 +71,8 @@ export class InterceptorService implements HttpInterceptor {
           }),
           catchError((err) => {
             this.refreshTokenInProgress = false;
+            this.userService.logOut();
+            this.router.navigateByUrl('/login');
             return throwError(err);
           })
         );

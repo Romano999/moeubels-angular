@@ -79,6 +79,8 @@ export class ApiService {
     };
 
     const body = new URLSearchParams();
+    
+    // Todo: Salt
     body.set('username', userCredentials.username);
     body.set('password', userCredentials.password);
 

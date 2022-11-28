@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <h1>Write your review</h1>
+    <form action="" [formGroup]="reviewForm" (ngSubmit)="onReviewAttempt()">
+      <div>
+        <mat-form-field appearance="outline" [hideRequiredMarker]="false">
+          <mat-label>Your review</mat-label>
+          <textarea matInput placeholder="Your review" formControlName="comment"> </textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <star-rating-control formControlName="rating"> </star-rating-control>
+      </div>
+      <div class="shopping-buttons">
+        <button mat-raised-button color="primary">Submit review</button>
+      </div>
+    </form>
+  </div>
+</div>

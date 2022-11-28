@@ -1,0 +1,12 @@
+@use "src/colors.scss";
+
+.container {
+
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+

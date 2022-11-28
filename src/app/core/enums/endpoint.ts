@@ -3,8 +3,9 @@ export enum Endpoint {
   Category = "categories",
   Favourite = "favourites",
   Product = "products",
-  Reviews = "reviews",
+  Review = "reviews",
   ShoppingCart = "shoppingcart",
   Payment = "shoppingcart/payment",
   RefreshToken = "roles/token/refresh",
+  Login = "login",
 }

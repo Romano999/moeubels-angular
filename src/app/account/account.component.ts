@@ -13,7 +13,8 @@ import { UserService } from '../core/services/user.service';
 export class AccountComponent {
   contactMethod?: String = 'phone';
   userRole: String;
-  adminRole: Role = Role.Administrator
+  adminRole: Role = Role.Administrator;
+  isAdmin!: boolean;
 
   constructor(
     private jwtService: JwtService,
@@ -21,7 +22,8 @@ export class AccountComponent {
     private router: Router,
     private customSnackbarService: CustomSnackbarService,
   ) {
-    this.userRole = userService.getRole()
+    this.userRole = userService.getRole();
+    this.isAdmin = this.adminRole !== 'Administrator';
   }
 
   onLogOut() {
