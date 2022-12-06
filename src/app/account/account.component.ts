@@ -13,7 +13,6 @@ import { UserService } from '../core/services/user.service';
 export class AccountComponent {
   contactMethod?: String = 'phone';
   userRole: String;
-  adminRole: Role = Role.Administrator;
   isAdmin!: boolean;
 
   constructor(
@@ -23,7 +22,7 @@ export class AccountComponent {
     private customSnackbarService: CustomSnackbarService,
   ) {
     this.userRole = userService.getRole();
-    this.isAdmin = this.adminRole !== 'Administrator';
+    this.isAdmin = this.userRole === Role.Administrator;
   }
 
   onLogOut() {
