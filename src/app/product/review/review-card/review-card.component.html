@@ -1,9 +1,9 @@
 <div class="container">
   <div class="review">
-    <div>
+    <div class="review-name">
       <h1>{{ review.actor.username }}</h1>
     </div>
-    <div>
+    <div class="review-details">
       <p>{{ review.comment }}</p>
       <star-rating labelText="{{review.rating}}" [rating]="review.rating" [readOnly]="true"> </star-rating>
     </div>

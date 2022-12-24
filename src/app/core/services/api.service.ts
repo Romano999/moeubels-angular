@@ -43,9 +43,18 @@ export class ApiService {
   }
 
   put(path: string, body: Object = {}): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+      })
+
+    };
+
     return this.http.put(
       `${environment.api_url}/${path}`,
-      JSON.stringify(body)
+      JSON.stringify(body),
+      httpOptions
     ).pipe(catchError(this.formatErrors));
   }
 
@@ -85,7 +94,7 @@ export class ApiService {
     body.set('password', userCredentials.password);
 
     return this.http.post(
-      `${environment.api_url}/login`,
+      `https://localhost:9867/login`,
       body.toString(),
       httpOptions
     ).pipe(catchError(this.formatErrors));

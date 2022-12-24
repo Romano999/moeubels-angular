@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor='let product of products'>
+    <app-manageable-product 
+    [product]="product"
+    (editAttempt)="onEditAttempt($event)"
+    ></app-manageable-product>
+  </div>
+</div>

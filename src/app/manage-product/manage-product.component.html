@@ -1,1 +1,8 @@
-<p>manage-product works!</p>
+<app-search-bar (searchTerm)="searchProduct($event)"></app-search-bar>
+<app-manage-product-list
+[products]="products"
+(editAttempt)="onEditAttempt($event)"></app-manage-product-list>
+<app-search-paginator
+(pageable)="onPagingChange($event)"
+[size]="amountOfResults"
+></app-search-paginator>

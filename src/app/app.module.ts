@@ -19,15 +19,14 @@ import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { ManageProductComponent } from './manage-product/manage-product.component';
-import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { SharedModule } from './shared/shared.module';
+import { ManageProductModule } from './manage-product/manage-product.module';
+import { ManageUsersModule } from './manage-users/manage-users.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ManageProductComponent,
-    ManageUsersComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -47,6 +46,9 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
     ProductModule,
     ShoppingCartModule,
     MatSnackBarModule,
+    SharedModule,
+    ManageProductModule,
+    ManageUsersModule
   ],
   exports: [
     //HttpClientModule,

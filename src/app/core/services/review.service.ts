@@ -20,7 +20,7 @@ export class ReviewService {
 
   getByProductId(productId: string): Observable<Review[]> {
     const httpParams = new HttpParams()
-    return this.apiService.get<Review>(`${Endpoint.Review}/${productId}`, httpParams);
+    return this.apiService.get<Review>(`${Endpoint.Review}/product/${productId}`, httpParams);
   }
 
   insert(reviewRequest: ReviewRequest)  {
