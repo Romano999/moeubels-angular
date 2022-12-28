@@ -1,1 +1,9 @@
-
+<app-search-bar (searchTerm)="searchUser($event)"></app-search-bar>
+<app-manage-user-list
+[actors]="users" 
+(editAttempt)="onEditAttempt($event)"
+></app-manage-user-list>
+<app-search-paginator
+(pageable)="onPagingChange($event)"
+[size]="amountOfResults"
+></app-search-paginator>

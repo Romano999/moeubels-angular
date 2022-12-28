@@ -1,0 +1,59 @@
+<div class="container">
+  <mat-card>
+    <!-- Is not editing  -->
+    <div class="actor-card" *ngIf="!isEditing">
+      <div class="actor-name">
+        <p> {{actor.username}} </p>
+      </div>
+      <div>
+        <p>{{actor.firstName}}</p>
+      </div>
+      <div>
+        <p>{{actor.lastName}}</p>
+      </div>
+      <div>
+        <p>{{ actor.role?.roleId }}</p>
+      </div>
+      <div>
+        <!-- <a [routerLink]="['/product', product.productId]"><button mat-stroked-button>View</button></a> -->
+      </div>
+      <div>
+        <button mat-stroked-button (click)="onEditAttempt()">Edit</button>
+      </div>
+    </div>
+    <!-- Is editing -->
+    <div *ngIf="isEditing">
+      <div>
+        <form action="" [formGroup]="editForm" (ngSubmit)="onEditAttempt()">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>First name</mat-label>
+              <input matInput formControlName="firstName">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input matInput formControlName="lastName">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Role</mat-label>
+              <input matInput formControlName="role">
+            </mat-form-field>
+          </div>
+          <button type="submit" mat-raised-button color="primary">Edit</button>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
+

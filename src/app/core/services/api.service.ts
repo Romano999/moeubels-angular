@@ -48,7 +48,6 @@ export class ApiService {
         'Content-Type': 'application/json',
         'Accept': '*/*',
       })
-
     };
 
     return this.http.put(

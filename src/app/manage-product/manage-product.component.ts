@@ -72,7 +72,8 @@ export class ManageProductComponent implements OnInit {
   }
 
   onEditAttempt(updatedProduct: ProductUpdateRequest) {
-    this.productService.update(updatedProduct).subscribe({
+    this.productService.update(updatedProduct)
+    .subscribe({
       next: (response: HttpResponse<any>) => {
         let body = JSON.parse(JSON.stringify(response));
         this.customSnackbarService.open(

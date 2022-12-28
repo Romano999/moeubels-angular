@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor='let actor of actors'>
+    <app-manageable-user 
+    [actor]="actor"
+    (editAttempt)="onEditAttempt($event)"
+    ></app-manageable-user>
+  </div>
+</div>

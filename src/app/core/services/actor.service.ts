@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Endpoint } from '../enums/endpoint';
 import { Actor } from '../models/actor';
+import { ActorUpdateRequest } from '../requests/actor-update-request';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -27,8 +28,8 @@ export class ActorService {
     return this.apiService.getAll(`${Endpoint.Actor}`, httpParams);
   }
 
-  update(actor: Actor) {
-    return this.apiService.put(`${Endpoint.Actor}`, actor)
+  update(actorRequest: ActorUpdateRequest) {
+    return this.apiService.put(`${Endpoint.Actor}/${actorRequest.userId}`, actorRequest)
   }
 
   insert(actor: Actor)  {
