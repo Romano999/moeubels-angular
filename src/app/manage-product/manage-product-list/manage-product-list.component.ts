@@ -7,14 +7,11 @@ import { ProductUpdateRequest } from 'src/app/core/requests/product-update-reque
   templateUrl: './manage-product-list.component.html',
   styleUrls: ['./manage-product-list.component.scss']
 })
-export class ManageProductListComponent implements OnInit {
+export class ManageProductListComponent {
   @Input() products: Array<Product> = [];
   @Output() editAttempt = new EventEmitter<ProductUpdateRequest>();
   
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onEditAttempt(updatedProduct: ProductUpdateRequest) {
     this.editAttempt.emit(updatedProduct);

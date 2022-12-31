@@ -7,20 +7,11 @@ import { ReviewRequest } from 'src/app/core/requests/review-request';
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.scss']
 })
-export class ReviewComponent implements OnInit, OnChanges {
+export class ReviewComponent implements OnChanges {
 
   @Input() reviews: Review[] = [];
   @Output() reviewAttempt = new EventEmitter<ReviewRequest>();
   reviewsIsEmpty : boolean = false;
-
-  ngOnInit(): void {
-    // this.reviews.forEach( review => console.log(review) )
-    // if (this.reviews.length === 0) {
-    //   this.reviewsIsEmpty = true
-    // }
-
-    // console.log(`Reviews: ${this.reviews}`)
-  }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log("ok")

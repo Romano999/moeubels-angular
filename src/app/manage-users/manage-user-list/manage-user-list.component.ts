@@ -7,14 +7,11 @@ import { ActorUpdateRequest } from 'src/app/core/requests/actor-update-request';
   templateUrl: './manage-user-list.component.html',
   styleUrls: ['./manage-user-list.component.scss']
 })
-export class ManageUserListComponent implements OnInit {
+export class ManageUserListComponent {
   @Input() actors: Array<Actor> = [];
   @Output() editAttempt = new EventEmitter<ActorUpdateRequest>();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onEditAttempt(updatedActor: ActorUpdateRequest) {
     this.editAttempt.emit(updatedActor);

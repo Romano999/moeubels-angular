@@ -6,12 +6,9 @@ import { Review } from 'src/app/core/models/review';
   templateUrl: './review-card.component.html',
   styleUrls: ['./review-card.component.scss']
 })
-export class ReviewCardComponent implements OnInit {
+export class ReviewCardComponent {
   @Input() review!: Review;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
