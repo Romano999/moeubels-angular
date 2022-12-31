@@ -19,6 +19,9 @@ import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SharedModule } from './shared/shared.module';
+import { ManageProductModule } from './manage-product/manage-product.module';
+import { ManageUsersModule } from './manage-users/manage-users.module';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ProductModule,
     ShoppingCartModule,
     MatSnackBarModule,
+    SharedModule,
+    ManageProductModule,
+    ManageUsersModule
   ],
   exports: [
     //HttpClientModule,

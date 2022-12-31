@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Reviews</h1>
+  <div *ngIf="!reviewsIsEmpty">
+    <div *ngFor="let review of reviews">
+      <app-review-card
+      [review]="review"></app-review-card>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+  <div *ngIf="reviewsIsEmpty">
+    No reviews found, be the first to review this product!
+  </div>
+  <div class="reviewComment">
+    <app-review-comment (reviewAttempt)="onReviewAttempt($event)"></app-review-comment>
+  </div>
+</div>

@@ -6,5 +6,12 @@
     (shoppingCartProduct)="addToShoppingCart()"
     (favoriteProduct)="addToFavorites()"></app-product-card>
   </div>
+  <div>
+    
+    <app-review
+    [reviews]="reviews"
+    (reviewAttempt)="onReviewAttempt($event)"
+    ></app-review>
+  </div>
 </div>
 

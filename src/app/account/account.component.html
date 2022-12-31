@@ -9,5 +9,10 @@
     <mat-tab *ngIf="true" label="Log out">
       <app-log-out (logOut)="onLogOut()"></app-log-out>
     </mat-tab>
+    <mat-tab *ngIf="isAdmin" label="Administration">
+        <app-admin>
+            
+        </app-admin>
+      </mat-tab>
   </mat-tab-group>
 </div>

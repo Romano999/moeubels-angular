@@ -1,0 +1,19 @@
+@use "src/colors.scss";
+
+.container {
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: rgba($color: colors.$green, $alpha: 2.0);
+}
+
+.reviewComment {
+  margin-top: 30px;
+
+}

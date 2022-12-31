@@ -2,6 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pageable } from '../core/models/pageable';
 import { Product } from '../core/models/product';
+import { CategoryService } from '../core/services/category.service';
 import { ProductService } from '../core/services/product.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class SearchComponent implements OnInit{
   previousSearchterm: String = "";
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit() {
@@ -46,10 +48,12 @@ export class SearchComponent implements OnInit{
   getAllProducts() {
     this.productService.getAll(this.pageable.page, this.pageable.amount)
     .subscribe({
-      next: (response: HttpResponse<any>) => {
-        let body = JSON.parse(JSON.stringify(response));
+      next: (productResponse: HttpResponse<any>) => {
+        let body = JSON.parse(JSON.stringify(productResponse));
+        let categoryId: string = body.content[0].categoryId;
         this.products = body.content;
         this.amountOfResults = body.totalElements;
+        console.log(`Received a size of ${this.amountOfResults}`)
       },
       error: (e) => console.log(e)
     })

@@ -6,7 +6,7 @@ export interface Actor {
   password?: string,
   firstName: string,
   lastName: string,
-  roles?: Role,
+  role?: Role,
   createdAt?: Date,
   modifiedAt?: Date
 }

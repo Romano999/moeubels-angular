@@ -1,1 +1,16 @@
-<p>admin works!</p>
+<div class="container">
+    <h1>Administration</h1>
+    <p>Manage the website</p>
+    <button
+    mat-raised-button
+    [routerLink]="['/manage-products']"
+    class="button">Manage products</button>
+    <button
+    mat-raised-button
+    [routerLink]="['/manage-users']"
+    class="button">Manage users</button>
+    <button
+    mat-raised-button
+    [routerLink]="['/contact']"
+    class="button">Reviews</button>
+  </div>

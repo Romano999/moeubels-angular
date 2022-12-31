@@ -1,8 +1,9 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Endpoint } from '../enums/endpoint';
 import { Product } from '../models/product';
+import { ProductUpdateRequest } from '../requests/product-update-request';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -27,12 +28,16 @@ export class ProductService {
     return this.apiService.getAll(`${Endpoint.Product}`, httpParams);
   }
 
-  update(product: Product) {
-    return this.apiService.put(`${Endpoint.Product}`, product)
-  }
+  // update(product: Product) {
+  //   return this.apiService.put(`${Endpoint.Product}`, product)
+  // }
 
   insert(product: Product)  {
     return this.apiService.post(`${Endpoint.Product}`, product)
+  }
+
+  update(productRequest: ProductUpdateRequest)  {
+    return this.apiService.put(`${Endpoint.Product}/${productRequest.productId}`, productRequest)
   }
 
   delete(id: string) {

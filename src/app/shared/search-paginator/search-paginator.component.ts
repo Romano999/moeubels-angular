@@ -19,7 +19,7 @@ export class SearchPaginatorComponent {
       page: event.pageIndex,
       amount: event.pageSize
     }
-    console.log("page change")
+
     this.pageable.emit(pageableSetting)
   }
 }

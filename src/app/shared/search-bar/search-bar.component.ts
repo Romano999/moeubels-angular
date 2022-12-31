@@ -12,12 +12,12 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchForm = new FormGroup({
-      "searchTerm": new FormControl(null, null)
+      "searchTerm": new FormControl("", null)
     });
   }
 
   onSearch() {
-    this.searchTerm.emit(this.searchForm.value['searchTerm']);
+    this.searchTerm.emit(this.searchForm.value['searchTerm'].trim());
   }
 
 }
