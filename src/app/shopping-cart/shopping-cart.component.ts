@@ -38,7 +38,7 @@ export class ShoppingCartComponent implements OnInit {
           this.products.push(item.product)
         })
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     })
   }
 
@@ -50,7 +50,7 @@ export class ShoppingCartComponent implements OnInit {
         this.products = [];
         this.customSnackbarService.open(`Payment successful!`);
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     });
   }
 

@@ -30,8 +30,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   onLoginAttempt() {
-    //console.log(`${this.loginForm.value['username']} + ${this.loginForm.value['password']}`);
-
     if (!this.loginForm.valid) {
       this.customSnackbarService.open("Please fill in all fields!");
 

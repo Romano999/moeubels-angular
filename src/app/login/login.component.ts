@@ -29,7 +29,6 @@ export class LoginComponent {
     .subscribe({
       next: (response: HttpResponse<any>) => {
         let body = JSON.parse(JSON.stringify(response));
-        console.log(body)
         this.jwtService.saveJwtToken(body["accessToken"])
         this.jwtService.saveRefreshToken(body["refreshToken"])
         this.userService.saveId(body["actorId"])

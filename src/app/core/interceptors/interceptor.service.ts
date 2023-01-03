@@ -38,7 +38,6 @@ export class InterceptorService implements HttpInterceptor {
       request = req.clone()
     }
 
-    console.log(request);
     this.handlingError = false
 
     return next.handle(request).pipe(catchError(error => {

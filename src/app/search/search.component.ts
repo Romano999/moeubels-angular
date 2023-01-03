@@ -53,9 +53,8 @@ export class SearchComponent implements OnInit{
         let categoryId: string = body.content[0].categoryId;
         this.products = body.content;
         this.amountOfResults = body.totalElements;
-        console.log(`Received a size of ${this.amountOfResults}`)
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     })
   }
 
@@ -68,7 +67,7 @@ export class SearchComponent implements OnInit{
           this.products = body.content;
           this.amountOfResults = body.totalElements;
         },
-        error: (e) => console.log(e)
+        error: (e) => {}
     })
   }
 }
