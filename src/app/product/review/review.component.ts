@@ -14,15 +14,12 @@ export class ReviewComponent implements OnChanges {
   reviewsIsEmpty : boolean = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("ok")
-
     for (let propName in changes) {
       let change = changes[propName];
-      console.dir(change);
       if(change.isFirstChange()) {
-        console.log(`first change: ${propName}`);
+
       } else {
-        console.log(`prev: ${change.previousValue}, cur: ${change.currentValue}`);
+
       }
     }
   }

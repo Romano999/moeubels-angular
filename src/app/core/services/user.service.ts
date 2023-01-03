@@ -11,7 +11,6 @@ export class UserService {
   }
 
   saveRole(role: String) {
-    console.log(role)
     window.sessionStorage['role'] = role;
   }
 
@@ -20,7 +19,6 @@ export class UserService {
   }
 
   saveId(id: String) {
-    console.log(id)
     window.sessionStorage['id'] = id;
   }
 

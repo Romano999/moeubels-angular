@@ -76,7 +76,7 @@ export class ProductComponent {
           `You have added "${this.product.productName}" to your shopping cart!`,
         )
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     })
   }
 
@@ -102,7 +102,7 @@ export class ProductComponent {
           `Review added!`,
         )
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     });
   }
 

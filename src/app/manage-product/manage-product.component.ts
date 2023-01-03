@@ -54,7 +54,6 @@ export class ManageProductComponent implements OnInit {
         this.products = body.content;
         this.amountOfResults = body.totalElements;
       },
-      error: (e) => console.log(e)
     })
   }
 
@@ -67,7 +66,6 @@ export class ManageProductComponent implements OnInit {
           this.products = body.content;
           this.amountOfResults = body.totalElements;
         },
-        error: (e) => console.log(e)
     })
   }
 
@@ -80,7 +78,6 @@ export class ManageProductComponent implements OnInit {
           `You edited ${updatedProduct.productName}`,
         )
       },
-      error: (e) => console.log(e)
     })
   }
 

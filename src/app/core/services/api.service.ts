@@ -29,13 +29,10 @@ export class ApiService {
   }
 
   getWithPagination(path: string, searchterm: string, page: number, params: HttpParams = new HttpParams()): Observable<any> {
-    //console.log(`sending request to ${environment.api_url}/${path}/name/${searchterm}/${page}`)
     /*this.http.get(`${environment.api_url}/${path}/name/${searchterm}/${page}`, { params }).subscribe({
       next(json:any) {
-        console.log(json);
       },
       error(msg) {
-        console.log('Error Getting Location: ', msg);
       }
     });*/
     return this.http.get(`${environment.api_url}/${path}/name/${searchterm}/${page}`, { params })

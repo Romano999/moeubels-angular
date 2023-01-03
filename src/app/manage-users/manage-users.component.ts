@@ -48,7 +48,7 @@ export class ManageUsersComponent implements OnInit {
         this.users = body.content;
         this.amountOfResults = body.totalElements;
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     })
   }
 
@@ -61,7 +61,7 @@ export class ManageUsersComponent implements OnInit {
           `You edited ${updatedActor.username}`,
         )
       },
-      error: (e) => console.log(e)
+      error: (e) => {}
     })
   }
 }
