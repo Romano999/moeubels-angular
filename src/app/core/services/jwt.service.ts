@@ -35,7 +35,7 @@ export class JwtService {
 
   refreshToken() {
     return this.http.post(
-      `https://localhost:9867/${Endpoint.RefreshToken}`,
+      `${environment.api_short_url}/${Endpoint.RefreshToken}`,
       null,
       { headers: new HttpHeaders({
         'Content-Type': 'application/json',

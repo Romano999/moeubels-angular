@@ -1,4 +1,6 @@
 <app-search-bar (searchTerm)="searchProduct($event)"></app-search-bar>
+<app-create-product
+(createAttempt)="onCreateAttempt($event)"></app-create-product>
 <app-manage-product-list
 [products]="products"
 (editAttempt)="onEditAttempt($event)"></app-manage-product-list>

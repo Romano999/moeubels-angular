@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="holder">
+    <button class="create-button" mat-raised-button (click)="openForm()">Open create form</button>
+  </div>
+
+  <mat-card *ngIf="isCreating" class="create-form">
+    <!-- Is editing -->
+    <div class="create-card">
+      <div>
+        <form action="" [formGroup]="createForm" (ngSubmit)="onCreateAttempt()">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Image URL</mat-label>
+              <input matInput placeholder="" formControlName="imageUrl">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="description">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Price</mat-label>
+              <input type="number" matInput formControlName="price">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Amount available</mat-label>
+              <input type="number" matInput formControlName="amountAvailable">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Category name</mat-label>
+              <input matInput formControlName="categoryName">
+            </mat-form-field>
+          </div>
+          <button type="submit" mat-raised-button color="primary">Edit</button>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Endpoint } from '../enums/endpoint';
 import { Product } from '../models/product';
+import { ProductCreateRequest } from '../requests/product-create-request';
 import { ProductUpdateRequest } from '../requests/product-update-request';
 import { ApiService } from './api.service';
 
@@ -32,8 +33,8 @@ export class ProductService {
   //   return this.apiService.put(`${Endpoint.Product}`, product)
   // }
 
-  insert(product: Product)  {
-    return this.apiService.post(`${Endpoint.Product}`, product)
+  insert(productRequest: ProductCreateRequest)  {
+    return this.apiService.post(`${Endpoint.Product}`, productRequest)
   }
 
   update(productRequest: ProductUpdateRequest)  {

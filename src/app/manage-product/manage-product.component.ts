@@ -2,6 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pageable } from '../core/models/pageable';
 import { Product } from '../core/models/product';
+import { ProductCreateRequest } from '../core/requests/product-create-request';
 import { ProductUpdateRequest } from '../core/requests/product-update-request';
 import { CustomSnackbarService } from '../core/services/custom-snackbar.service';
 import { ProductService } from '../core/services/product.service';
@@ -81,4 +82,19 @@ export class ManageProductComponent implements OnInit {
     })
   }
 
+  onCreateAttempt(createdProduct: ProductCreateRequest) {
+    this.productService.insert(createdProduct)
+    .subscribe({
+      next: (response: HttpResponse<any>) => {
+        let body = JSON.parse(JSON.stringify(response));
+        this.customSnackbarService.open(
+          `You created ${createdProduct.productName}`,
+        )
+      }, error: (e: any) => {
+        this.customSnackbarService.open(
+          `Creation of ${createdProduct.productName} has failed`,
+        )
+      }
+    })
+  }
 }
