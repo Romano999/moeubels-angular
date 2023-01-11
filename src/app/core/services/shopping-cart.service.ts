@@ -1,5 +1,6 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
 import { Observable } from 'rxjs';
 import { Endpoint } from '../enums/endpoint';
 import { Product } from '../models/product';
@@ -34,6 +35,11 @@ export class ShoppingCartService {
 
   delete(id: string) {
     return this.apiService.delete(`${Endpoint.ShoppingCart}/${id}`)
+  }
+
+  deleteWithBody(actor: string, product: string) {
+    let body: Object = { actor, product }
+    return this.apiService.deleteWithBody(`${Endpoint.ShoppingCart}`, body)
   }
 
   payment(actorId: string) {

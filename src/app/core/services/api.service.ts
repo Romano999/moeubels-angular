@@ -60,7 +60,6 @@ export class ApiService {
         'Content-Type': 'application/json',
         'Accept': '*/*',
       })
-
     };
 
     return this.http.post(
@@ -73,6 +72,21 @@ export class ApiService {
   delete(path: string): Observable<any> {
     return this.http.delete(
       `${environment.api_url}/${path}`
+    ).pipe(catchError(this.formatErrors));
+  }
+
+  deleteWithBody(path: string, body: Object = {}): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+      }),
+      body: JSON.stringify(body)
+    };
+
+    return this.http.delete(
+      `${environment.api_url}/${path}`,
+      httpOptions
     ).pipe(catchError(this.formatErrors));
   }
 

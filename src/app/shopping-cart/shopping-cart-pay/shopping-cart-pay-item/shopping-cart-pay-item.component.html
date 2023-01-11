@@ -13,7 +13,9 @@
       </mat-chip-list>
     </div>
     <div class="col-sm-4">
-      <a [routerLink]="['/product', product.productId]"><button mat-stroked-button>View</button></a>
+      <div>
+        <button (click)="removeItem()" mat-raised-button color="mat-raised-button">Remove</button>
+      </div>
     </div>
   </div>
 </div>
